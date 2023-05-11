@@ -6,7 +6,7 @@
 
 ## Description
 
-This is my second project as a student in 42 Málaga. In this project I have to recreate the function printf
+This is my second project as a student in 42 Málaga. In this project I have to "recreate" the function printf
 
 <!-- Checkout -->
 
