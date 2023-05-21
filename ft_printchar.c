@@ -6,19 +6,19 @@
 /*   By: ribana-b < ribana-b@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 19:57:52 by ribana-b          #+#    #+#             */
-/*   Updated: 2023/05/20 20:01:03 by ribana-b         ###   ########.fr       */
+/*   Updated: 2023/05/21 11:40:43 by ribana-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_putchar(const char c, va_list arg)
+int	ft_printc(int c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int	ft_putstr(const char *s, va_list arg)
+int	ft_prints(const char *s)
 {
 	int	cont;
 
@@ -26,7 +26,7 @@ int	ft_putstr(const char *s, va_list arg)
 	if (!s)
 	{
 		write(1, "(null)", 6);
-		return (0)
+		return (6);
 	}
 	while (s[cont])
 	{
