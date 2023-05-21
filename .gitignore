@@ -1,3 +1,5 @@
 .DS_Store
 *.pdf
 a.out
+test.c
+test.sh

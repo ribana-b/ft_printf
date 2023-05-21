@@ -6,7 +6,7 @@
 /*   By: ribana-b < ribana-b@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 20:07:16 by ribana-b          #+#    #+#             */
-/*   Updated: 2023/05/21 10:55:18 by ribana-b         ###   ########.fr       */
+/*   Updated: 2023/05/21 14:27:53 by ribana-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,28 @@
 
 int	ft_printdi(int n)
 {
-	int	cont;
+	int		cont;
+	char	*newstr;
 
-	cont = 0;
-
+	if (n < 0)
+	{
+		cont = 1;
+	}
+	else
+	{
+		cont = 0;
+	}
+	newstr = ft_itoa(n);
+	cont += ft_prints(newstr);
 	return (cont);
 }
 
 int	ft_printu(unsigned int n)
 {
-	int	cont;
+	int		cont;
+	char	*newstr;
 
-	cont = 0;
-
+	newstr = ft_utoa(n);
+	cont = ft_prints(newstr);
 	return (cont);
 }
