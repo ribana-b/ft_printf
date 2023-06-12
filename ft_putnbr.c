@@ -3,24 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ribana-b <ribana-b@42student.malaga.com    +#+  +:+       +#+        */
+/*   By: ribana-b < ribana-b@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 14:25:36 by ribana-b          #+#    #+#             */
-/*   Updated: 2023/06/12 14:31:35 by ribana-b         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:54:09 by ribana-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *str)
+int	ft_strlena(char *str)
 {
 	int	count;
 
 	count = 0;
-	if (str[count] == '\0')
-	{
-		return (0);
-	}
 	while (str[count] != '\0')
 	{
 		count++;
@@ -34,12 +30,13 @@ char	*set_base(char *base, int base_length)
 	int		count;
 
 	count = 0;
-	newbase = (char *)malloc(base_length * sizeof(char));
+	newbase = (char *)malloc(base_length * sizeof(char) + 1);
 	while (count < base_length)
 	{
 		newbase[count] = base[count];
 		count++;
 	}
+	newbase[count] = '\0';
 	return (newbase);
 }
 
@@ -50,7 +47,7 @@ int	ft_putnbr_b(long long n, char *base)
 	int			b_length;
 
 	charcount = 0;
-	b_length = ft_strlen(base);
+	b_length = ft_strlena(base);
 	newbase = set_base(base, b_length);
 	if (n >= 0)
 	{
@@ -68,5 +65,6 @@ int	ft_putnbr_b(long long n, char *base)
 		ft_putnbr_b(n * -1, newbase);
 		charcount++;
 	}
+	free(newbase);
 	return (charcount);
 }

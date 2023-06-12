@@ -3,32 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ribana-b <ribana-b@42student.malaga.com    +#+  +:+       +#+        */
+/*   By: ribana-b < ribana-b@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 22:00:04 by ribana-b          #+#    #+#             */
-/*   Updated: 2023/06/12 15:08:56 by ribana-b         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:52:15 by ribana-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
 
 # define DEC_BASE "0123456789"
-# define LHEX_BASE "0123456789abcedf"
-# define UHEX_BASE "0123456789ABCEDF"
+# define LHEX_BASE "0123456789abcdef"
+# define UHEX_BASE "0123456789ABCDEF"
 
 int		ft_printf(const char *str, ...);
 int		ft_printf_format(const char *str, va_list arg, int charcount);
 int		ft_putchar(int character);
 int		ft_putstr(char *str);
-int		ft_strlen(char *str);
+int		ft_strlena(char *str);
 char	*set_base(char *base, int base_length);
 int		ft_putnbr_b(long long n, char *base);
-int		ft_putaddress(void *ptr);
 
 #endif
