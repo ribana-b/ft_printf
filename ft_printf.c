@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ribana-b < ribana-b@student.42malaga.co    +#+  +:+       +#+        */
+/*   By: ribana-b <ribana-b@42student.malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 14:26:41 by ribana-b          #+#    #+#             */
-/*   Updated: 2023/06/12 18:48:19 by ribana-b         ###   ########.fr       */
+/*   Updated: 2023/06/14 17:07:22 by ribana-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,10 @@ int	main(void)
 	printf("\033[34m%%test value:\033[0m %d\n", ft_printf("%%: %%\n"));
 	printf("\033[34mhextest value:\033[0m %d\n", ft_printf("x1: %x x2: %x x3: %x x4: %x x5: %x\n x6: %x x7: %x x8: %x x9: %x x10: %x\n", -1, -9, -10, -11, -14, -15, -16, -99, -100, -101));
 	printf("\033[34mhextest value:\033[0m %d\n", printf("x1: %x x2: %x x3: %x x4: %x x5: %x\n x6: %x x7: %x x8: %x x9: %x x10: %x\n", -1, -9, -10, -11, -14, -15, -16, -99, -100, -101));
+	
+	printf("\033[1;33mMore address testers\033[0m\n");
+	printf("\033[34mstringtest/address value:\033[0m %d\n", printf("p: %p\n", stringtest));
+	printf("\033[34mstringtest/address value:\033[0m %d\n", ft_printf("p: %p\n", stringtest));
 
 	return (0);
 } */
