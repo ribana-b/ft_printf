@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ribana-b < ribana-b@student.42malaga.co    +#+  +:+       +#+        */
+/*   By: ribana-b <ribana-b@42student.malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 14:25:32 by ribana-b          #+#    #+#             */
-/*   Updated: 2023/06/12 18:16:26 by ribana-b         ###   ########.fr       */
+/*   Updated: 2023/06/15 02:50:33 by ribana-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,16 @@ int	ft_putstr(char *str)
 		count += ft_putchar(str[count]);
 	}
 	return (count);
+}
+
+int	ft_putaddress(unsigned long int ptr)
+{
+	if (ptr == 0)
+	{
+		return (write(1, "(nil)", 5));
+	}
+	else
+	{
+		return (write(1, "0x", 2) + ft_putnbr_b(ptr, LHEX_BASE));
+	}
 }

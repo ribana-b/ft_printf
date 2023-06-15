@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ribana-b < ribana-b@student.42malaga.co    +#+  +:+       +#+        */
+/*   By: ribana-b <ribana-b@42student.malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 22:00:04 by ribana-b          #+#    #+#             */
-/*   Updated: 2023/06/12 18:52:15 by ribana-b         ###   ########.fr       */
+/*   Updated: 2023/06/15 02:50:47 by ribana-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int		ft_putstr(char *str);
 int		ft_strlena(char *str);
 char	*set_base(char *base, int base_length);
 int		ft_putnbr_b(long long n, char *base);
+int		ft_putaddress(unsigned long int ptr);
 
 #endif
