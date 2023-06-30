@@ -13,16 +13,16 @@ OBJ = $(FILES:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rcs $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
-$(OBJ): $(FILES)
-	$(COMPILATOR) $(FLAGS) $(FILES)
+%.o: %.c
+	$(COMPILATOR) $(FLAGS) $< -o $@
 
 clean:
-	@/bin/rm -f $(OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
