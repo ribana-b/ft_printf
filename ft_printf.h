@@ -25,7 +25,7 @@ int		ft_printf(const char *str, ...);
 int		ft_printf_format(const char *str, va_list arg, int charcount);
 int		ft_putchar(int character);
 int		ft_putstr(char *str);
-int		ft_strlena(char *str);
+int		ft_strlen(char *str);
 char	*set_base(char *base, int base_length);
 int		ft_putnbr_b(long long n, char *base);
 int		ft_putaddress(unsigned long int ptr);

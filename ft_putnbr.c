@@ -1,4 +1,4 @@
-//* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_strlena(char *str)
+int	ft_strlen(char *str)
 {
 	int	count;
 
@@ -47,7 +47,7 @@ int	ft_putnbr_b(long long n, char *base)
 	int			b_length;
 
 	charcount = 0;
-	b_length = ft_strlena(base);
+	b_length = ft_strlen(base);
 	newbase = set_base(base, b_length);
 	if (n >= 0)
 	{
