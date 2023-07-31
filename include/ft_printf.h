@@ -28,6 +28,7 @@ int		ft_putstr(char *str);
 int		ft_strlen(char *str);
 char	*set_base(char *base, int base_length);
 int		ft_putnbr_b(long long n, char *base);
+int		ft_putnbr_b2(unsigned long n, char *base);
 int		ft_putaddress(unsigned long int ptr);
 
 #endif
