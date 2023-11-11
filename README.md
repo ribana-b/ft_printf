@@ -4,7 +4,7 @@
 
 Ft_printf is a function that prints in the standard output a formatted string. It replicates the behaviour of the original [printf](https://www.man7.org/linux/man-pages/man3/printf.3.html).
 
-## Available formats
+### Available formats
 
 - **%c**: Prints the character.
 - **%s**: Prints the string.
@@ -16,7 +16,7 @@ Ft_printf is a function that prints in the standard output a formatted string. I
 - **%X**: Prints the argument as uppercase hexadecimal.
 - **%%**: Prints the character '%'.
 
-## Allowed functions
+## Allowed Functions
 
 - [write()](https://man7.org/linux/man-pages/man2/write.2.html)
 - [malloc()](https://www.man7.org/linux/man-pages/man3/malloc.3.html)
@@ -25,6 +25,7 @@ Ft_printf is a function that prints in the standard output a formatted string. I
 - [va_arg()](https://linux.die.net/man/3/va_arg)
 - [va_copy()](https://linux.die.net/man/3/va_copy)
 - [va_end()](https://linux.die.net/man/3/va_end)
+- Any function I code from scratch.
 
 ## Progress
 
