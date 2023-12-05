@@ -29,4 +29,4 @@ Ft_printf is a function that prints in the standard output a formatted string. I
 
 ## Progress
 
-If you want to check my progress as a student in 42 Málaga check out my [main repository](https://github.com/SrRecursive/42Malaga)!
+If you want to check my progress as a student in 42 Málaga check out my [main repository](https://github.com/SrVariable/42Malaga)!
