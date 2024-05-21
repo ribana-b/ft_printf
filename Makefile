@@ -1,8 +1,20 @@
-# ========================================================================== #
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ribana-b <ribana-b@student.42malaga.com>   +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/05/21 12:27:33 by ribana-b          #+#    #+# Malaga       #
+#    Updated: 2024/05/21 12:31:43 by ribana-b         ###   ########.com       #
+#                                                                              #
+# **************************************************************************** #
 
-# <- Color Library -> #
 
-# <-- Text Color --> #
+# @--------------------------------------------------------------------------@ #
+# |                                 Colors                                   | #
+# @--------------------------------------------------------------------------@ #
+
 T_BLACK = \033[30m
 T_RED = \033[31m
 T_GREEN = \033[32m
@@ -12,81 +24,68 @@ T_MAGENTA = \033[35m
 T_CYAN = \033[36m
 T_WHITE = \033[37m
 
-# <-- Text Style --> #
 BOLD = \033[1m
 ITALIC = \033[3m
 UNDERLINE = \033[4m
 STRIKETHROUGH = \033[9m
 
-# <-- Background Color --> #
-B_BLACK = \033[40m
-B_RED = \033[41m
-B_GREEN = \033[42m
-B_YELLOW = \033[43m
-B_BLUE = \033[44m
-B_MAGENTA = \033[45m
-B_CYAN = \033[46m
-B_WHITE = \033[47m
+CLEAR_LINE = \033[1F\r\033[2K
 
-# <-- Reset Everything --> #
 RESET = \033[0m
 
-# ========================================================================== #
+# @--------------------------------------------------------------------------@ #
+# |                                 Macros                                   | #
+# @--------------------------------------------------------------------------@ #
 
-# <- Library's Name -> #
 NAME = libftprintf.a
 
-# <- Compilation Command -> #
 CC = gcc
 
-# <- Compilation Flags -> #
 CFLAGS = -Wall -Wextra -Werror
 
-# <- Directories -> #
 SRC_DIR = src/
 UTILS_DIR = utils/
 
-# <- Files -> #
 SRC_FILES = ft_printf.c
 UTILS_FILES = ft_putchar.c ft_putnbr.c
 
-# <- Directories + Files -> # 
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 UTILS = $(addprefix $(UTILS_DIR), $(UTILS_FILES))
 OBJ_SRC = $(SRC:.c=.o)
 OBJ_UTILS = $(UTILS:.c=.o)
 
-# ========================================================================== #
+COMPILE_MSG = @echo "$(CLEAR_LINE)🧩 🦔 $(T_WHITE)$(BOLD)Compiling $<...$(RESET)"
+OBJ_MSG = @echo "✅ 🦔 $(T_YELLOW)$(BOLD)Objects $(RESET)$(T_GREEN)created successfully!$(RESET)"
+OUTPUT_MSG = @echo "✅ 🦔 $(T_MAGENTA)$(BOLD)$(NAME) $(RESET)$(T_GREEN)created successfully!$(RESET)"
+CLEAN_MSG = @echo "🗑️  🦔 $(T_YELLOW)$(BOLD)Objects $(RESET)$(T_RED)destroyed successfully!$(RESET)"
+FCLEAN_MSG = @echo "🗑️  🦔 $(T_MAGENTA)$(BOLD)$(NAME) $(RESET)$(T_RED)destroyed successfully!$(RESET)"
 
-# <- Main Target -> #
+# @--------------------------------------------------------------------------@ #
+# |                                 Targets                                  | #
+# @--------------------------------------------------------------------------@ #
+
 all: $(NAME)
 
-# < - Library Creation -> #
 $(NAME): $(OBJ_SRC) $(OBJ_UTILS)
-	@echo "$(B_GREEN)$(T_YELLOW)$(BOLD)Objects created successfully$(RESET)"
-	ar rcs $(NAME) $(OBJ_SRC) $(OBJ_UTILS)
-	@echo "$(B_GREEN)$(T_YELLOW)$(BOLD)Library created successfully$(RESET)"
+	$(OBJ_MSG)
+	@ar rcs $(NAME) $(OBJ_SRC) $(OBJ_UTILS)
+	$(OUTPUT_MSG)
 
-# <- Objects Creation -> #
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(COMPILE_MSG)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-# <- Objects Destruction -> #
 clean:
-	rm -f $(OBJ_SRC)
-	@echo "$(B_RED)$(T_YELLOW)$(BOLD)Source Object destroyed successfully$(RESET)"
-	rm -f $(OBJ_UTILS)
-	@echo "$(B_RED)$(T_YELLOW)$(BOLD)Utils Objects destroyed successfully$(RESET)"
+	@rm -f $(OBJ_SRC) $(OBJ_UTILS)
+	$(CLEAN_MSG)
 
-# <- Clean Execution + Library Destruction -> #
 fclean: clean
-	rm -f $(NAME)
-	@echo "$(B_RED)$(T_YELLOW)$(BOLD)Library destroyed successfully$(RESET)"
+	@rm -f $(NAME)
+	$(FCLEAN_MSG)
 
-# <- Fclean Execution + All Execution -> #
-re: fclean all
+re:
+	@make -s fclean
+	@echo
+	@make -s all
 
-# <- Targets Declaration -> #
-.PHONY = all clean fclean re
-
-# ========================================================================== #
+.PHONY: all clean fclean re
